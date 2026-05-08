@@ -8,7 +8,12 @@ variable "CloudFunctionURL" {
     type = string
     default = ""
     description = "Enter the Cloud Run Function URL."
-  
+}
+
+variable "ServiceAccount" {
+    type = string
+    default = ""
+    description = "Enter the service account"
 }
 
 locals {

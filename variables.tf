@@ -4,15 +4,15 @@ variable "Users_To_Offboard" {
   default     = ""
 }
 
-locals {
-  user_list = var.Users_To_Offboard == "" ? [] : [
-    for u in split(",", var.Users_To_Offboard) : trimspace(u)
-  ]
-}
-
-variable "url" {
+variable "CloudFunctionURL" {
     type = string
     default = ""
     description = "Enter the Cloud Run Function URL."
   
+}
+
+locals {
+  user_list = var.Users_To_Offboard == "" ? [] : [
+    for u in split(",", var.Users_To_Offboard) : trimspace(u)
+  ]
 }

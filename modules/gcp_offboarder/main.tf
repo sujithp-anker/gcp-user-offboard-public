@@ -1,7 +1,7 @@
 data "google_client_config" "default" {}
 
 data "http" "gcp_offboard" {
-  url    = "https://REGION-PROJECT_ID.cloudfunctions.net/offboard_gcp_user"
+  url    = var.url
   method = "POST"
   request_headers = {
     "Content-Type"  = "application/json"

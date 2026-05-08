@@ -5,8 +5,14 @@ variable "Users_To_Offboard" {
 }
 
 locals {
-  # Clean up the string: split by comma, remove whitespace, filter empty strings
   user_list = var.Users_To_Offboard == "" ? [] : [
     for u in split(",", var.Users_To_Offboard) : trimspace(u)
   ]
+}
+
+variable "url" {
+    type = string
+    default = ""
+    description = "Enter the Cloud Run Function URL."
+  
 }
